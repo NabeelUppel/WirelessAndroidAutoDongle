@@ -6,7 +6,7 @@
 #include "proxyHandler.h"
 #include "uevent.h"
 #include "usb.h"
-#include "ConnectionStrategyManager.h"
+#include "connectionStrategyManager.h"
 
 ConnectionStrategyManager& ConnectionStrategyManager::instance(){
     static ConnectionStrategyManager instance;

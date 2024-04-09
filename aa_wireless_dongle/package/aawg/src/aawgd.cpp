@@ -3,7 +3,7 @@
 
 #include "common.h"
 #include "bluetoothHandler.h"
-#include "ConnectionStrategyManager.h"
+#include "connectionStrategyManager.h"
 #include "proxyHandler.h"
 #include "uevent.h"
 #include "usb.h"
