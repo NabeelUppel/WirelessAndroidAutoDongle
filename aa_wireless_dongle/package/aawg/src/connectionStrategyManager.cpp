@@ -18,10 +18,6 @@ void ConnectionStrategyManager::init() {
 
 }
 
-ConnectionStrategyManager::ConnectionStrategyManager(){
-
-}
-
 void ConnectionStrategyManager::start(){
     ConnectionStrategy connectionStrategy = Config::instance()->getConnectionStrategy();
     Logger::instance()->info("ConnectionStrategyManager: Connection Strategy: %d\n", connectionStrategy);
@@ -44,7 +40,7 @@ void ConnectionStrategyManager::dongleMode(){
         std::optional<std::thread> proxyThread = proxy.startServer(Config::instance()->getWifiInfo().port);
 
         if (!proxyThread) {
-            Logger::instance()->error("ConnectionStrategyManager: Failed to start proxy server thread\n");
+            Logger::instance()->info("ConnectionStrategyManager: Failed to start proxy server thread\n");
             return;
         }
 
@@ -68,7 +64,7 @@ void ConnectionStrategyManager::phoneFirst(){
         std::optional<std::thread> proxyThread = proxy.startServer(Config::instance()->getWifiInfo().port);
 
         if (!proxyThread) {
-            Logger::instance()->error("ConnectionStrategyManager: Failed to start proxy server thread\n");
+            Logger::instance()->info("ConnectionStrategyManager: Failed to start proxy server thread\n");
             return;
         }
 
@@ -95,7 +91,7 @@ void ConnectionStrategyManager::usbFirst(){
         std::optional<std::thread> proxyThread = proxy.startServer(Config::instance()->getWifiInfo().port);
 
         if (!proxyThread) {
-            Logger::instance()->error("ConnectionStrategyManager: Failed to start proxy server thread\n");
+            Logger::instance()->info("ConnectionStrategyManager: Failed to start proxy server thread\n");
             return;
         }
         BluetoothHandler::instance().powerOn();

@@ -18,7 +18,7 @@ int main(void) {
     BluetoothHandler::instance().init();
     ConnectionStrategyManager::instance().init();
 
-    ConnectionStrategy::instance().start();
+    ConnectionStrategyManager::instance().start();
     ueventThread->join();
 
     return 0;
